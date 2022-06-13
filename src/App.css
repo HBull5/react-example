@@ -22,3 +22,13 @@ input[type="text"]:focus {
     background-color: aliceblue;
     transition: border 0.2s ease-in, background-color 0.2s ease-in;
 }
+button {
+    background-color: steelblue; 
+    color: #fff; 
+    margin-top: 1rem;
+    border: none;
+    border-radius: 0.25em; 
+    padding: 0.5em 1.5em;
+    cursor: pointer;
+    font-weight: 700;
+}
