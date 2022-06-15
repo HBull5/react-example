@@ -1,6 +1,6 @@
-const Button = ({ text, callback }) => {
+const Button = ({text, callback}) => {
     return (
-        <button onClick={ callback }>{ text }</button>
+        <button onClick={callback}>{text}</button>
     )
 }
 
