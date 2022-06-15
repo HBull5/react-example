@@ -1,5 +1,4 @@
 const LabeledTextInput = ({label, setState}) => {
-
     const updateAppState = (key, value) => {
         setState(prevState => ({
             ...prevState, 
