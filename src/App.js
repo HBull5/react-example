@@ -5,26 +5,28 @@ import Button from './components/Button';
 
 function App() {
     const data = useRef(document.getElementById('FIELD_555'));
-    const [state, setState] = useState({});
+    const [appState, setAppState] = useState({});
+    const [nameState, setNameState] = useState('');
+    const [titleState, setTitleState] = useState('');
+    const [companyState, setCompanyState] = useState('');
 
     const resetState = e => {
         e.preventDefault();
-        const inputs = document.querySelectorAll('input');
-        for (const input of inputs) {
-            input.value = '';
-        }
-        setState({});
+        setNameState('');
+        setTitleState('');
+        setCompanyState('');
+        setAppState({});
     };
 
     useEffect(() => {
-        data.current.value = JSON.stringify(state);
-    }, [state]);
+        data.current.value = JSON.stringify(appState);
+    }, [appState]);
 
     return (
         <div>
-            <LabeledTextInput label='Name' setState={setState} />
-            <LabeledTextInput label='Title' setState={setState} />
-            <LabeledTextInput label='Company' setState={setState} />
+            <LabeledTextInput label='Name' value={nameState} setState={setNameState} setAppState={setAppState} />
+            <LabeledTextInput label='Title' value={titleState} setState={setTitleState} setAppState={setAppState} />
+            <LabeledTextInput label='Company' value={companyState} setState={setCompanyState} setAppState={setAppState} />
             <Button text='Reset' callback={resetState} />
         </div>
     );
